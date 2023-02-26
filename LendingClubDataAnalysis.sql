@@ -35,31 +35,6 @@ SELECT DISTINCT COUNT(CustomerID)
 FROM dbo.loans;
 -- 10,000 Unique Loans
 
-/* Removing $ from Amount Column & creating a new column
-SELECT REPLACE(Amount,'$','')
-FROM dbo.trans;
-
-ALTER TABLE dbo.trans
-ADD Amount_clean NVARCHAR(MAX);
-
-ALTER TABLE dbo.trans
-DROP COLUMN Amount_clean;
-
-UPDATE dbo.trans
-SET Amount_clean = REPLACE(Amount,'$','');
---Getting an ERROR Converting NVARCHAR to Float
-
---Using Try_convert to convert NVARCAHR into FLOAT
-SELECT TRY_CONVERT(float, Amount_clean)
-FROM dbo.trans;
-
---Updated Amnount_clean column to float
-UPDATE dbo.trans
-SET Amount_clean = TRY_CONVERT(float, Amount_clean);
---Unsuccesful */
-
-SELECT customerid, amount
-FROM dbo.trans;
 
 --Finding the Most Common Purpose of Loans
 SELECT Purpose, COUNT(purpose) AS Number
