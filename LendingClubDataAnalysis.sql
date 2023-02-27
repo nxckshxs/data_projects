@@ -122,7 +122,7 @@ ORDER BY AVG_Loan_Size DESC;
 --Small Businesses have the largest average loan Size
 
 --Creating a Joined table for use in Tableau Visualisation
-SELECT lo.loan_amnt, lo.term, lo.term, lo.installment, lo.grade, lo.home_ownership, lo.purpose, lo.addr_state, pe.BadLoan
+SELECT lo.loan_amnt, lo.term, lo.installment, lo.grade, lo.home_ownership, lo.purpose, lo.addr_state, pe.BadLoan
 FROM dbo.loans lo
 JOIN dbo.perf pe
     ON lo.CustomerID = pe.CustomerID;
